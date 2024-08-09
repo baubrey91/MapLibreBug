@@ -1,0 +1,178 @@
+{
+  "version": 8,
+  "name": "Positron",
+  "metadata": {
+    "mapbox:autocomposite": false,
+    "mapbox:type": "template",
+    "mapbox:groups": {
+      "b6371a3f2f5a9932464fa3867530a2e5": {
+        "name": "Transportation",
+        "collapsed": false
+      },
+      "a14c9607bc7954ba1df7205bf660433f": {
+        "name": "Boundaries"
+      },
+      "101da9f13b64a08fa4b6ac1168e89e5f": {
+        "name": "Places",
+        "collapsed": false
+      }
+    },
+    "openmaptiles:version": "3.x",
+    "openmaptiles:mapbox:owner": "openmaptiles",
+    "openmaptiles:mapbox:source:url": "mapbox://openmaptiles.4qljc88t"
+  },
+  "sources": {
+    "openmaptiles": {
+      "type": "vector",
+      "url": "https://gis.23andme.com/data/v3.json"
+    }
+  },
+  "sprite": "https://openmaptiles.github.io/positron-gl-style/sprite",
+  "glyphs": "https://gis.23andme.com/fonts/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "background-color": "rgba(247, 249, 250, 1)"
+      }
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(255, 255, 255, 1)",
+        "fill-antialias": true,
+        "fill-outline-color": "rgba(237, 239, 240, 1)"
+      }
+    },
+    {
+      "id": "place_city_town_village",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "Point"
+        ],
+        [
+          "any",
+          [
+            "==",
+            "class",
+            "city"
+          ],
+          [
+            "==",
+            "class",
+            "town"
+          ],
+          [
+            "==",
+            "class",
+            "village"
+          ]
+        ]
+      ],
+      "layout": {
+        "text-size": 10,
+        "icon-image": "circle-11",
+        "text-transform": "none",
+        "text-font": [
+          "Metropolis Regular",
+          "Noto Sans Regular"
+        ],
+        "text-justify": "left",
+        "visibility": "visible",
+        "text-offset": [
+          0.5,
+          0.2
+        ],
+        "icon-size": 0.4,
+        "text-anchor": {
+          "base": 1,
+          "stops": [
+            [
+              0,
+              "left"
+            ]
+          ]
+        },
+        "text-field": "{name:latin}"
+      },
+      "paint": {
+        "text-color": "#333435",
+        "text-halo-width": 1,
+        "text-halo-blur": 1,
+        "icon-opacity": 0.7
+      }
+    },
+    {
+      "id": "place_country",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "maxzoom": 5,
+      "layout": {
+        "visibility": "none",
+        "text-field": [
+          "case",
+          ["==", ["downcase", ["get", "name_en"]], "turkish republic of northern cyprus"],
+          "",
+          ["==", ["downcase", ["get", "name_en"]], "republic of northern cyprus"],
+          "",
+          ["==", ["downcase", ["get", "name_en"]], "northern cyprus"],
+          "",
+          ["==", ["downcase", ["get", "name_en"]], "nagorno-karabakh republic"],
+          "",
+          ["==", ["get", "iso_a2"], "MK"],
+          "North Macedonia",
+          ["==", ["get", "iso_a2"], "PS"],
+          "Palestine",
+          ["to-string", ["get", "name_en"]]
+        ],
+        "text-font": [
+          "Metropolis Light Italic",
+          "Noto Sans Italic"
+        ],
+        "text-transform": "none",
+        "text-size": {
+          "base": 1,
+          "stops": [
+            [
+              0,
+              9
+            ],
+            [
+              6,
+              11
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "text-halo-width": 1.4,
+        "text-halo-color": "rgba(236,236,234,0.7)",
+        "text-color": "#333435"
+      }
+    }
+  ],
+  "id": "positron"
+}
