@@ -16,6 +16,10 @@
 		CA0C9D042C52EBAE00F4DD36 /* mapLibreBugTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0C9D032C52EBAE00F4DD36 /* mapLibreBugTests.swift */; };
 		CA0C9D0E2C52EBAE00F4DD36 /* mapLibreBugUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0C9D0D2C52EBAE00F4DD36 /* mapLibreBugUITests.swift */; };
 		CA0C9D102C52EBAE00F4DD36 /* mapLibreBugUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0C9D0F2C52EBAE00F4DD36 /* mapLibreBugUITestsLaunchTests.swift */; };
+		CA0C9D1E2C52EBC500F4DD36 /* MapLibre in Frameworks */ = {isa = PBXBuildFile; productRef = CA0C9D1D2C52EBC500F4DD36 /* MapLibre */; };
+		CA1B73E22C5BF7CB00498077 /* ac47Geo.json in Resources */ = {isa = PBXBuildFile; fileRef = CA1B73E12C5BF7CB00498077 /* ac47Geo.json */; };
+		CA1B73E42C5BF9ED00498077 /* StripedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1B73E32C5BF9ED00498077 /* StripedView.swift */; };
+		CAB31C6F2C5BF5560046E1C3 /* mapBoxStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = CAB31C6E2C5BF5560046E1C3 /* mapBoxStyle.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,9 @@
 		CA0C9D092C52EBAE00F4DD36 /* mapLibreBugUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mapLibreBugUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA0C9D0D2C52EBAE00F4DD36 /* mapLibreBugUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapLibreBugUITests.swift; sourceTree = "<group>"; };
 		CA0C9D0F2C52EBAE00F4DD36 /* mapLibreBugUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapLibreBugUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CA1B73E12C5BF7CB00498077 /* ac47Geo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ac47Geo.json; sourceTree = "<group>"; };
+		CA1B73E32C5BF9ED00498077 /* StripedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripedView.swift; sourceTree = "<group>"; };
+		CAB31C6E2C5BF5560046E1C3 /* mapBoxStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mapBoxStyle.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA0C9D1E2C52EBC500F4DD36 /* MapLibre in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +114,9 @@
 				CA0C9CF52C52EBAE00F4DD36 /* Assets.xcassets */,
 				CA0C9CF72C52EBAE00F4DD36 /* LaunchScreen.storyboard */,
 				CA0C9CFA2C52EBAE00F4DD36 /* Info.plist */,
+				CAB31C6E2C5BF5560046E1C3 /* mapBoxStyle.json */,
+				CA1B73E12C5BF7CB00498077 /* ac47Geo.json */,
+				CA1B73E32C5BF9ED00498077 /* StripedView.swift */,
 			);
 			path = mapLibreBug;
 			sourceTree = "<group>";
@@ -143,6 +154,9 @@
 			dependencies = (
 			);
 			name = mapLibreBug;
+			packageProductDependencies = (
+				CA0C9D1D2C52EBC500F4DD36 /* MapLibre */,
+			);
 			productName = mapLibreBug;
 			productReference = CA0C9CE92C52EBAC00F4DD36 /* mapLibreBug.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +229,9 @@
 				Base,
 			);
 			mainGroup = CA0C9CE02C52EBAC00F4DD36;
+			packageReferences = (
+				CA0C9D1C2C52EBC500F4DD36 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */,
+			);
 			productRefGroup = CA0C9CEA2C52EBAC00F4DD36 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,9 +248,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAB31C6F2C5BF5560046E1C3 /* mapBoxStyle.json in Resources */,
 				CA0C9CF62C52EBAE00F4DD36 /* Assets.xcassets in Resources */,
 				CA0C9CF92C52EBAE00F4DD36 /* Base in Resources */,
 				CA0C9CF42C52EBAC00F4DD36 /* Base in Resources */,
+				CA1B73E22C5BF7CB00498077 /* ac47Geo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA0C9CF12C52EBAC00F4DD36 /* ViewController.swift in Sources */,
+				CA1B73E42C5BF9ED00498077 /* StripedView.swift in Sources */,
 				CA0C9CED2C52EBAC00F4DD36 /* AppDelegate.swift in Sources */,
 				CA0C9CEF2C52EBAC00F4DD36 /* SceneDelegate.swift in Sources */,
 			);
@@ -442,6 +462,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 253NPZ7WXV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mapLibreBug/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -469,6 +490,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 253NPZ7WXV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mapLibreBug/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -601,6 +623,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA0C9D1C2C52EBC500F4DD36 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maplibre/maplibre-gl-native-distribution";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA0C9D1D2C52EBC500F4DD36 /* MapLibre */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA0C9D1C2C52EBC500F4DD36 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */;
+			productName = MapLibre;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA0C9CE12C52EBAC00F4DD36 /* Project object */;
 }
